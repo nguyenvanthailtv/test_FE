@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <title>Document</title>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-black-600: #2a2a2b;
+        --color-black-500: #303030;
+        --color-gray-600: #575859;
+        --color-gray-200: #f5f6fa;
+        --color-yellow-600: #dea100;
+        --color-yellow-400: #f7cc5b;
+        --color-red-600: #f5222d;
+
+        --font-sans: "Inter", "sans-serif";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full max-w-[500px] mx-auto px-4">
+      <header class="fixed z-10 top-0 left-0 right-0 w-full h-12 bg-white px-4 shadow-[2px_4px_10px_0px_rgba(0,13,11,0.04)]">
+        <div class="max-w-[500px] relative mx-auto h-full">
+          <figure class="h-full absolute top-0 bottom-0 left-0">
+            <img class="h-full object-cover" src="./assets/images/img_1.png" alt="" />
+          </figure>
+          <div class="h-full flex flex-col justify-center">
+            <h3 class="text-black-500 text-center font-semibold leading-[120%]">Shop Name</h3>
+            <span class="text-black-500/50 text-[12px] leading-[120%] text-center">Shop address</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-16 w-full">
+        <section class="mt-4 bg-gray-200 p-4 rounded-[28px]">
+          <div class="bg-white text-center w-full py-4 rounded-[20px] shadow-[2px_2px_16px_0px_rgba(0,0,0,0.08)]">
+            <h4 class="font-bold text-gray-600 leading-[150%]">Your order number</h4>
+            <h2 class="mt-4 text-yellow-600 font-semibold text-[34px] leading-[120%]">Sushi - #005</h2>
+          </div>
+        </section>
+
+        <section class="mt-4">
+          <ul class="p-4">
+            <li class="flex min-h-[50px]">
+              <div class="w-[28%] flex flex-col">
+                <span class="font-semibold text-black-600 text-[14px] leading-[150%]">14:45</span>
+                <span class="text-gray-600 text-[12px] leading-[20px]">Nov 20, 2024</span>
+              </div>
+
+              <div class="w-9 text-yellow-600 relative">
+                <div class="mx-auto w-7 h-7 bg-current flex items-center justify-center text-inherit rounded-full border-[3px] border-solid border-current">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fff" class="w-4 h-4">
+                    <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                  </svg>
+                </div>
+                <div class="absolute top-[32px] bottom-2 left-[50%] translate-x-[-50%] w-[4px] min-h-5 rounded-full bg-yellow-600"></div>
+              </div>
+
+              <div class="flex-1 pl-4">
+                <h4 class="font-semibold text-[14px] leading-[150%] text-black-600">Order received</h4>
+                <p class="text-[12px] leading-[20px] text-gray-600 mt-1">We have received your order.</p>
+              </div>
+            </li>
+            <li class="flex min-h-[50px] mt-5">
+              <div class="w-[28%] flex flex-col">
+                <span class="font-semibold text-black-600 text-[14px] leading-[150%]">14:45</span>
+                <span class="text-gray-600 text-[12px] leading-[20px]">Nov 20, 2024</span>
+              </div>
+
+              <div class="w-9 text-red-600 relative">
+                <div class="mx-auto w-7 h-7 bg-white flex items-center justify-center text-inherit rounded-full border-[3px] border-solid border-current">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#f5222d" class="w-4 h-4 text-red-600">
+                    <path
+                      d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                    />
+                  </svg>
+                </div>
+                <div class="absolute top-[32px] bottom-2 left-[50%] translate-x-[-50%] w-[4px] min-h-5 rounded-full bg-current text-inherit"></div>
+              </div>
+
+              <div class="flex-1 pl-4">
+                <h4 class="font-semibold text-[14px] leading-[150%] text-black-600">All drivers are currently busy</h4>
+                <p class="text-[12px] leading-[20px] text-gray-600 mt-1">We’re sorry, all our drivers are currently busy. The system could not find a suitable driver at this time.</p>
+              </div>
+            </li>
+            <li class="flex min-h-[50px] mt-5">
+              <div class="w-[28%] flex flex-col">
+                <span class="font-semibold text-black-600 text-[14px] leading-[150%]">14:50</span>
+                <span class="text-gray-600 text-[12px] leading-[20px]">Nov 20, 2024</span>
+              </div>
+
+              <div class="w-9 text-yellow-600 relative">
+                <div class="mx-auto w-7 h-7 bg-current flex items-center justify-center text-inherit rounded-full border-[3px] border-solid border-current">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fff" class="w-4 h-4">
+                    <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                  </svg>
+                </div>
+                <div class="absolute top-[32px] bottom-2 left-[50%] translate-x-[-50%] w-[4px] min-h-5 rounded-full bg-yellow-600"></div>
+              </div>
+
+              <div class="flex-1 pl-4">
+                <h4 class="font-semibold text-[14px] leading-[150%] text-black-600">Cancel Order & Refund</h4>
+                <p class="text-[12px] leading-[20px] text-gray-600 mt-1">The order will be canceled.</p>
+              </div>
+            </li>
+            <li class="flex min-h-[50px] mt-5">
+              <div class="w-[28%] flex flex-col">
+                <span class="font-semibold text-black-600 text-[14px] leading-[150%]">14:51</span>
+                <span class="text-gray-600 text-[12px] leading-[20px]">Nov 20, 2024</span>
+              </div>
+
+              <div class="w-9 text-yellow-600 relative">
+                <div class="mx-auto w-7 h-7 bg-white flex items-center justify-center text-inherit rounded-full border-[3px] border-solid border-current">
+                  <div class="w-4 h-4 mx-auto rounded-full bg-current text-inherit"></div>
+                </div>
+              </div>
+
+              <div class="flex-1 pl-4">
+                <h4 class="font-semibold text-[14px] leading-[150%] text-black-600">Refund successful</h4>
+                <p class="text-[12px] leading-[20px] text-gray-600 mt-1">Your money will be refunded in a couple of minutes</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="p-6 rounded-[24px] bg-gray-200 mt-4">
+          <div>
+            <h4 class="text-black-600 text-center text-[24px] leading-[32px] font-semibold">Sorry, We Couldn’t Deliver</h4>
+            <p class="leading-[150%] text-gray-600 text-center mt-3">We couldn’t find a driver this time. Please try ordering again or choose Takeaway instead. Thank you for understanding!</p>
+          </div>
+
+          <button class="w-full mt-5 py-3 rounded-[8px] bg-yellow-400 text-center font-semibold text-[20px] leading-[28px] text-black-600">Place new order</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
+<!-- 
+#2A2A2B
+#575859
+#F5F6FA
+#DEA100
+#F5222D
+Inter
+-->
