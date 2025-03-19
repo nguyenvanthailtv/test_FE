@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const productList = document.querySelector('.product-list')
     let slide = 0
     let width = 0
-    let remove = true
 
     const cards = Array.from({ length: 40 }, (_, i) => `product-item ${i + 1}`);
 
@@ -19,11 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
       productList.appendChild(card);
     });
     const productItems = document.querySelectorAll('.product-item')
-    productList.addEventListener('scroll', (event) => {
-       
-    })
 
-    productList.addEventListener('scrollend', () => {
+    productList.addEventListener('scroll', () => {
         slide = 0
         productItems.forEach(element => {
             const item = element.getBoundingClientRect();
@@ -35,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         });
         productList.scrollTo({
-            // left: slide - 1 > 0 ? slide * 200 + 8 * (slide - 1) : slide * 200,
-            left: slide * width ,
+            left: 1000 ,
             behavior: "smooth",
         })
 
@@ -77,4 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
         //     behavior: "smooth",
         // })
     })
+
 })
