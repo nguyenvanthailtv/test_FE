@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    let timeOut = 100
+    let isScrolling 
     const productList = document.querySelector('.product-list')
     let slide = 0
     let width = 0
@@ -19,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const productItems = document.querySelectorAll('.product-item')
 
-    productList.addEventListener('scrollend', () => {
+    productList.addEventListener('scroll', () => {
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
         slide = 0
         productItems.forEach(element => {
             const item = element.getBoundingClientRect();
@@ -42,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
         });
+    }, timeOut);
+        
 
     })
 })
