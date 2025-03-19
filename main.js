@@ -1,53 +1,64 @@
+document.addEventListener("DOMContentLoaded", () => {
+  let timeOut = 100;
+  let isScrolling;
+  let isTouch;
+  let cardWidth = 0; // chiều rộng của card
 
-document.addEventListener('DOMContentLoaded', () => {
-    let timeOut = 100
-    let isScrolling 
-    const productList = document.querySelector('.product-list')
-    let slide = 0
-    let width = 0
+  let slideActive = 0; // vị trí của slide đầu tiên trên màn hình
+  const productList = document.querySelector(".product-list");
 
-    const cards = Array.from({ length: 40 }, (_, i) => `product-item ${i + 1}`);
+  const cards = Array.from({ length: 40 }, (_, i) => `product-item ${i + 1}`);
 
-    // Thêm card vào DOM
-    cards.forEach(cardText => {
-      const card = document.createElement("div");
+  // Thêm card vào DOM
+  cards.forEach((cardText, cardIndex) => {
+    const card = document.createElement("div");
+    if (cardIndex == 0) {
+      card.className = "product-item active";
+    } else {
       card.className = "product-item";
-    //   card.textContent = cardText;
+    }
 
-      const cardContent = document.createElement('div')
-      cardContent.textContent = cardText
-      card.appendChild(cardContent)
-      productList.appendChild(card);
-    });
-    const productItems = document.querySelectorAll('.product-item')
-
-    productList.addEventListener('scroll', () => {
+    const cardContent = document.createElement("div");
+    cardContent.textContent = cardText;
+    card.appendChild(cardContent);
+    productList.appendChild(card);
+  });
+  const productItems = document.querySelectorAll(".product-item");
+  const productLeft = productList.getBoundingClientRect().left ?? 0
+  productItems.forEach((el, index) => {
+    console.log(el.getBoundingClientRect().left - productLeft, 'e')
+  })
+  console.log(productList.getBoundingClientRect().left, 'aaaaaa')
+  productList.addEventListener("scroll", () => {
+    document.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
     clearTimeout(isScrolling);
     isScrolling = setTimeout(() => {
-        slide = 0
-        productItems.forEach(element => {
-            const item = element.getBoundingClientRect();
+      slideActive = 0;
+      productItems.forEach((element) => {
+        const item = element.getBoundingClientRect();
+        const itemLeft = element.getBoundingClientRect().left - productLeft
+        // console.log(item.left, item.left - productLeft ,' item')
+        cardWidth = item.width;
+        if (itemLeft <= 0 && itemLeft + item.width < item.width / 2) {
+            // console.log(item.left, 'aa')
+          slideActive = slideActive + 1;
+        }
+      });
+      productList.scrollTo({
+        left: slideActive * cardWidth,
+        behavior: "smooth",
+      });
 
-            width = item.width
-            if(item.left < 0 && item.left + item.width < item.width / 2){
-                slide = slide + 1
-            }
-            
-        });
-        productList.scrollTo({
-            left: slide * width ,
-            behavior: "smooth",
-        })
-
-        productItems.forEach(element => {
-            const item = element.getBoundingClientRect();
-            if(item.left > 0 && item.left < item.width) {
-                element.classList.add('active')
-            }
-            
-        });
+      document.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
+      productItems[slideActive].classList.add("active");
     }, timeOut);
-        
+  });
 
-    })
-})
+  productList.addEventListener("touchstart", () => {
+    isTouch = false;
+  });
+
+  productList.addEventListener("touchend", () => {
+    isTouch = true;
+  });
+});
