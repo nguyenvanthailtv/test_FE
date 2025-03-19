@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         });
         productList.scrollTo({
-            left: 1000 ,
+            left: slide * width ,
             behavior: "smooth",
         })
 
