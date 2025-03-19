@@ -1,0 +1,21 @@
+.product-list::-webkit-scrollbar {
+    display: none;
+}
+
+.product-item {
+    width: 20%;
+    min-width: 20%;
+    padding-left: 8px;
+    height: 200px;
+}
+
+.product-item div {
+    height: 200px;
+    background-color: green;
+}
+.product-item.active,
+.product-item.active + .product-item,
+.product-item.active + .product-item + .product-item,
+.product-item.active + .product-item + .product-item  {
+    /* background-color: red; */
+}
