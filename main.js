@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let timeOut = 100;
+  let timeOut = 50;
   let isScrolling;
   let isTouch;
   let cardWidth = 0; // chiều rộng của card
@@ -49,8 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth",
       });
 
-      document.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
+      
+      setTimeout(() => {
+        document.querySelectorAll(".active").forEach((el) => el.classList.remove("active"));
       productItems[slideActive].classList.add("active");
+      }, 50)
     }, timeOut);
   });
 
