@@ -55,6 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     productList.addEventListener('touchend', () => {
+        productItems.forEach(element => {
+            const item = element.getBoundingClientRect();
+            if(item.left > 0 && item.left < item.width) {
+                element.classList.add('i-s')
+            }
+            
+        });
+
         // slide = 0
         // productItems.forEach(element => {
         //     const item = element.getBoundingClientRect();

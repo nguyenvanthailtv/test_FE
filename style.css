@@ -19,3 +19,8 @@
 .product-item.active + .product-item + .product-item  {
     /* background-color: red; */
 }
+
+.product-item.i-s {
+    background-color: blue;
+}
+
