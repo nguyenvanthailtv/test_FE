@@ -11,7 +11,7 @@
 
 .product-item div {
     height: 200px;
-    background-color: green;
+    background-color: yellow;
 }
 .product-item.active,
 .product-item.active + .product-item,
